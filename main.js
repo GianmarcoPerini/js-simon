@@ -1,12 +1,6 @@
-function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
 let lista = []
 let listaSi = []
 let listaNo = []
-
 
 for(let i=0;i<5;i++){
     lista.push(getRandom(1,300))
@@ -15,13 +9,12 @@ for(let i=0;i<5;i++){
 alert(lista)
 console.log(lista);
 
-
-for(let b=0;b<lista.length;b++){
-    setTimeout(function() {
-        let num = parseInt(prompt("inserisci i numeri"));
+setTimeout(function() {
+    for(let b=0;b<lista.length;b++){
+        let num = parseInt(prompt("Inserisci numeri"));
         while(listaSi.includes(num) || listaNo.includes(num)){
-            alert("no")
-            num = parseInt(prompt("inserisci i numeri"));
+            alert("Numero già inserito")
+            num = parseInt(prompt("Inserisci un numero diverso"));
         }
             if(lista.includes(num)){
                 listaSi.push(num)
@@ -30,5 +23,12 @@ for(let b=0;b<lista.length;b++){
                 listaNo.push(num)
                 document.getElementById("errore").innerHTML += "<button>" + listaNo.slice(-1) + "</button>"
             }
-        }, 1000);
+    }
+}, 1000);
+
+
+
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
