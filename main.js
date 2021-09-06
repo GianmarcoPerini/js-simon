@@ -13,6 +13,7 @@ for(let i=0;i<5;i++){
 }
 
 alert(lista)
+console.log(lista);
 
 
 for(let b=0;b<lista.length;b++){
@@ -24,11 +25,10 @@ for(let b=0;b<lista.length;b++){
         }
             if(lista.includes(num)){
                 listaSi.push(num)
+                document.getElementById("corretto").innerHTML += "<button>" + listaSi.slice(-1) + "</button>"
             }else{
                 listaNo.push(num)
+                document.getElementById("errore").innerHTML += "<button>" + listaNo.slice(-1) + "</button>"
             }
-            document.getElementById("corretto").innerHTML = listaSi.length
-            document.getElementById("errore").innerHTML = listaNo.length
         }, 1000);
 }
-
